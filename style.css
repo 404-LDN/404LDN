@@ -1,13 +1,19 @@
-/* Basic Reset & Grimey Aesthetic */
+/* Basic Reset & Gritty Professional Aesthetic */
 :root {
-    --primary-text-color: #f0f0f0;
-    --secondary-text-color: #a0a0a0;
-    --background-color: #1a1a1a;
-    --accent-color: #e63946; /* A slightly desaturated red for punch */
-    --dark-gray: #333333;
-    --font-bold: 'Oswald', sans-serif;
-    --font-mono: 'Roboto Mono', monospace;
+    --primary-text-color: #e0e0e0;      /* Lighter off-white for main text */
+    --secondary-text-color: #a8a8a8;    /* Muted gray for secondary info */
+    --background-color: #0d0d0d;        /* Deep, near-black for background */
+    --accent-color: #cf3d4e;            /* A more sophisticated, deeper red */
+    --dark-gray: #1f1f1f;               /* Darker gray for elements like header/footer */
+    --light-gray-border: #3a3a3a;       /* For subtle borders */
+    --font-heading: 'Oswald', sans-serif; /* Still bold, but with more presence */
+    --font-body: 'Roboto Mono', monospace; /* Retain techy, gritty feel */
+    --font-caption: 'Inter', sans-serif; /* Adding a third font for smaller text/professionalism */
 }
+
+/* Import Google Fonts - Updated for better variety and impact */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
 
 * {
     margin: 0;
@@ -16,11 +22,13 @@
 }
 
 body {
-    font-family: var(--font-mono);
+    font-family: var(--font-body);
     background-color: var(--background-color);
     color: var(--primary-text-color);
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    line-height: 1.7; /* Increased for better readability */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    text-rendering: optimizeLegibility; /* Better text rendering */
 }
 
 html {
@@ -31,7 +39,7 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1.5rem; /* Increased padding */
 }
 
 .text-center {
@@ -45,54 +53,57 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid var(--accent-color); /* Grimey border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* More prominent shadow */
+    border-bottom: 3px solid var(--accent-color); /* Stronger accent border */
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 .logo {
-    font-family: var(--font-bold);
-    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    font-size: 2.8rem; /* Slightly larger */
     color: var(--accent-color);
     text-decoration: none;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem; /* Increased gap */
 }
 
 .nav-links a {
     color: var(--primary-text-color);
     text-decoration: none;
-    font-family: var(--font-bold);
-    font-size: 1.2rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: var(--font-heading);
+    font-size: 1.3rem; /* Slightly larger */
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
     position: relative;
+    padding-bottom: 5px; /* Space for underline */
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 3px;
+    height: 4px; /* Thicker underline */
     background-color: var(--accent-color);
     left: 0;
-    bottom: -5px;
-    transition: width 0.3s ease;
+    bottom: 0; /* Align with bottom of text */
+    transition: width 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Springy effect */
 }
 
 .nav-links a:hover {
     color: var(--accent-color);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(var(--accent-color), 0.7);
 }
 
 .nav-links a:hover::after {
@@ -103,12 +114,12 @@ nav {
     display: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px; /* Increased gap for clarity */
 }
 
 .hamburger span {
-    width: 30px;
-    height: 3px;
+    width: 35px; /* Thicker lines */
+    height: 4px; /* Thicker lines */
     background-color: var(--primary-text-color);
     transition: all 0.3s ease;
 }
@@ -119,12 +130,13 @@ nav {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px; /* Adjust based on header height */
+        top: 80px; /* Adjust based on header height */
         left: 0;
         width: 100%;
         background-color: var(--dark-gray);
-        border-top: 2px solid var(--accent-color);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        border-top: 3px solid var(--accent-color);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        padding: 1rem 0;
     }
 
     .nav-links.active {
@@ -134,7 +146,7 @@ nav {
     .nav-links li {
         text-align: center;
         padding: 1rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid var(--light-gray-border);
     }
 
     .nav-links li:last-child {
@@ -143,6 +155,17 @@ nav {
 
     .hamburger {
         display: flex;
+    }
+
+    /* Hamburger animation */
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
     }
 }
 
@@ -156,7 +179,8 @@ nav {
     text-align: center;
     color: var(--primary-text-color);
     overflow: hidden;
-    background-color: black; /* Ensures black background behind image */
+    background-color: black;
+    padding-top: 70px; /* Account for fixed header */
 }
 
 #home::before {
@@ -169,68 +193,78 @@ nav {
     background-image: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=YOUR+FLAGSHIP+PIECE+HERE'); /* Replace with your flagship image */
     background-size: cover;
     background-position: center;
-    filter: grayscale(80%) brightness(50%) contrast(150%); /* Gritty filter */
-    transform: scale(1.05); /* Slight zoom for intensity */
+    filter: grayscale(90%) brightness(40%) contrast(180%); /* More dramatic gritty filter */
+    transform: scale(1.03); /* Subtle zoom */
+    opacity: 0.9; /* Slight transparency for overlay */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-    border: 3px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
-    animation: fadeInScale 1.5s ease-out;
+    padding: 2.5rem; /* Increased padding */
+    background-color: rgba(0, 0, 0, 0.75); /* Darker, more opaque overlay */
+    border: 4px solid var(--accent-color); /* Thicker, bolder border */
+    box-shadow: 0 0 30px rgba(var(--accent-color), 0.8); /* Stronger glow */
+    animation: fadeInScale 1.8s ease-out; /* Slightly longer animation */
 }
 
 @keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.8); }
+    from { opacity: 0; transform: scale(0.7); }
     to { opacity: 1; transform: scale(1); }
 }
 
 .hero-content h1 {
-    font-family: var(--font-bold);
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+    font-family: var(--font-heading);
+    font-size: 5rem; /* Larger and more impactful */
+    margin-bottom: 1.5rem;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.95);
+    letter-spacing: 3px;
+    line-height: 1.1;
     animation: glitchEffect 2s infinite alternate steps(2, start);
+    color: var(--primary-text-color); /* Ensure heading is primary text color */
 }
 @keyframes glitchEffect {
-    0% { text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); }
-    20% { text-shadow: -4px -4px 8px rgba(230, 57, 70, 0.7); }
-    40% { text-shadow: 4px -4px 8px rgba(230, 57, 70, 0.7); }
-    60% { text-shadow: -4px 4px 8px rgba(230, 57, 70, 0.7); }
-    80% { text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); }
-    100% { text-shadow: 0 0 0 rgba(0, 0, 0, 0.9); }
+    0% { text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.95); }
+    20% { text-shadow: -5px -5px 10px rgba(var(--accent-color), 0.7); }
+    40% { text-shadow: 5px -5px 10px rgba(var(--accent-color), 0.7); }
+    60% { text-shadow: -5px 5px 10px rgba(var(--accent-color), 0.7); }
+    80% { text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.95); }
+    100% { text-shadow: 0 0 0 rgba(0, 0, 0, 0.95); }
 }
 
 
 .hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.6rem; /* Slightly larger */
+    margin-bottom: 2.5rem;
     color: var(--secondary-text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
     color: var(--primary-text-color);
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    font-family: var(--font-bold);
+    padding: 1.2rem 3rem; /* More generous padding */
+    font-size: 1.6rem; /* Larger text */
+    font-family: var(--font-heading);
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.5);
+    transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 8px 20px rgba(var(--accent-color), 0.6); /* More intense shadow */
     position: relative;
     overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover {
-    background-color: #ff4d60; /* Lighter accent on hover */
-    transform: translateY(-5px);
+    background-color: #ff5c70; /* Brighter accent on hover */
+    transform: translateY(-7px) scale(1.05); /* More pronounced lift and slight scale */
+    box-shadow: 0 12px 25px rgba(var(--accent-color), 0.8);
 }
 
 .cta-button::before {
@@ -240,7 +274,7 @@ nav {
     left: 50%;
     width: 300%;
     height: 300%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15); /* More visible ripple */
     border-radius: 50%;
     transition: all 0.75s ease-out;
     transform: translate(-50%, -50%) scale(0);
@@ -254,104 +288,143 @@ nav {
 
 /* Countdown Timer */
 .countdown-container {
-    margin-top: 3rem;
-    padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px dashed var(--secondary-text-color);
+    margin-top: 4rem; /* More space */
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background */
+    border: 3px dashed var(--secondary-text-color); /* Thicker dashed border */
     display: inline-block;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Stronger shadow */
 }
 
 .countdown-container p {
-    font-family: var(--font-bold);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 2rem; /* Larger */
+    margin-bottom: 1.5rem;
     color: var(--accent-color);
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem; /* More space between items */
 }
 
 .countdown-item {
     background-color: var(--dark-gray);
-    padding: 1rem 1.5rem;
-    border: 1px solid var(--accent-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    min-width: 90px;
+    padding: 1.2rem 2rem; /* Larger padding */
+    border: 2px solid var(--accent-color); /* Thicker border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    min-width: 100px; /* Slightly wider */
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px); /* Lift on hover */
 }
 
 .countdown-item span {
     display: block;
-    font-family: var(--font-bold);
-    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    font-size: 3.5rem; /* Larger numbers */
     color: var(--primary-text-color);
     line-height: 1;
+    margin-bottom: 0.5rem;
 }
 
 .countdown-item div {
-    font-size: 0.9rem;
+    font-size: 1rem; /* Slightly larger label */
     color: var(--secondary-text-color);
     text-transform: uppercase;
+    font-family: var(--font-caption); /* Use caption font for labels */
+    letter-spacing: 1px;
 }
 
 /* General Section Styling */
 section {
-    padding: 6rem 0;
-    border-top: 5px solid var(--dark-gray);
-    border-bottom: 5px solid var(--dark-gray);
+    padding: 8rem 0; /* More vertical space */
+    border-top: 6px solid var(--dark-gray); /* Thicker border */
+    border-bottom: 6px solid var(--dark-gray);
+    background-color: var(--background-color); /* Default background */
 }
 
-section:nth-of-type(odd) {
-    background-color: #222222;
+section:nth-of-type(even) { /* Changed to even for alternating effect */
+    background-color: #121212; /* Slightly different dark shade */
 }
 
 section h2 {
-    font-family: var(--font-bold);
-    font-size: 3.5rem;
+    font-family: var(--font-heading);
+    font-size: 4.5rem; /* Larger headings */
     color: var(--accent-color);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem; /* More space below heading */
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 100px; /* Short underline */
+    height: 5px;
+    background-color: var(--primary-text-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 5px;
 }
 
 /* Shop Section */
 #shop .shop-embed-placeholder {
-    min-height: 500px; /* Adjust as needed */
-    background-color: #333;
+    min-height: 600px; /* More space for embeds */
+    background-color: #1a1a1a;
     display: flex;
+    flex-direction: column; /* Stack messages */
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--secondary-text-color);
-    border: 2px dashed var(--accent-color);
-    margin: 2rem auto;
+    border: 3px dashed var(--accent-color);
+    margin: 3rem auto; /* More margin */
     text-align: center;
+    padding: 2rem;
 }
+#shop .shop-embed-placeholder p:first-child {
+    font-family: var(--font-heading);
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+}
+#shop .shop-embed-placeholder p {
+    font-size: 1.2rem;
+    font-family: var(--font-caption);
+}
+
 #shop .shop-link-button {
     display: block;
     width: fit-content;
-    margin: 2rem auto;
+    margin: 3rem auto; /* More margin */
     background-color: var(--dark-gray);
     color: var(--primary-text-color);
-    padding: 1rem 2rem;
-    font-family: var(--font-bold);
-    font-size: 1.3rem;
+    padding: 1.2rem 2.8rem; /* Larger padding */
+    font-family: var(--font-heading);
+    font-size: 1.4rem; /* Larger text */
     text-decoration: none;
-    border: 2px solid var(--accent-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--accent-color); /* Thicker border */
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 #shop .shop-link-button:hover {
     background-color: var(--accent-color);
     border-color: var(--primary-text-color);
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(var(--accent-color), 0.7);
 }
 
 
@@ -359,30 +432,40 @@ section h2 {
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem; /* More space */
     align-items: center;
     text-align: center;
+    padding: 0 1.5rem; /* Ensure padding on edges */
 }
 
 .about-image {
-    width: 250px;
-    height: 250px;
+    width: 300px; /* Larger image */
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
-    filter: grayscale(50%) brightness(80%);
+    border: 6px solid var(--accent-color); /* Thicker, bolder border */
+    box-shadow: 0 0 25px rgba(230, 57, 70, 0.7);
+    filter: grayscale(60%) brightness(70%) contrast(120%); /* More artistic filter */
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+.about-image:hover {
+    filter: grayscale(0%) brightness(100%) contrast(100%); /* Color on hover */
+    transform: scale(1.05);
 }
 
-.about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    max-width: 800px;
+.about-text {
+    max-width: 800px; /* Wider text block */
     margin: 0 auto;
+}
+.about-text p {
+    font-size: 1.2rem; /* Slightly larger text */
+    margin-bottom: 1.5rem; /* More space between paragraphs */
+    color: var(--secondary-text-color);
 }
 .about-text strong {
     color: var(--accent-color);
-    font-family: var(--font-bold);
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
 }
 
 
@@ -390,79 +473,92 @@ section h2 {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem; /* More space */
     flex-wrap: wrap;
+    margin-bottom: 4rem; /* Space before email capture */
 }
 
 .social-links a {
     color: var(--primary-text-color);
-    font-size: 3rem;
+    font-size: 3.5rem; /* Larger icons */
     transition: color 0.3s ease, transform 0.3s ease;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.7)); /* Shadow for depth */
 }
 
 .social-links a:hover {
     color: var(--accent-color);
-    transform: translateY(-5px) scale(1.1);
+    transform: translateY(-8px) scale(1.15); /* More dramatic lift */
 }
 
 .email-capture {
     margin-top: 3rem;
     background-color: var(--dark-gray);
-    padding: 2rem;
-    border: 2px solid var(--accent-color);
-    max-width: 600px;
+    padding: 3rem; /* More padding */
+    border: 3px solid var(--accent-color); /* Thicker border */
+    max-width: 650px; /* Wider form */
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); /* Stronger shadow */
 }
 
 .email-capture h3 {
-    font-family: var(--font-bold);
-    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-size: 2.5rem; /* Larger heading */
     color: var(--primary-text-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
 }
 
 .email-capture p {
-    font-size: 1rem;
+    font-family: var(--font-caption); /* Use caption font */
+    font-size: 1.1rem;
     color: var(--secondary-text-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .email-capture form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem; /* More space between form elements */
 }
 
 .email-capture input[type="email"] {
-    padding: 1rem;
-    background-color: #444;
-    border: 1px solid var(--accent-color);
+    padding: 1.2rem; /* More padding */
+    background-color: #2a2a2a; /* Slightly lighter input background */
+    border: 1px solid var(--accent-color); /* Accent border */
     color: var(--primary-text-color);
-    font-size: 1.1rem;
-    font-family: var(--font-mono);
+    font-size: 1.2rem; /* Larger text */
+    font-family: var(--font-body);
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .email-capture input[type="email"]::placeholder {
-    color: #888;
+    color: #777; /* Darker placeholder text */
+}
+.email-capture input[type="email"]:focus {
+    border-color: var(--primary-text-color); /* Highlight on focus */
+    box-shadow: 0 0 8px rgba(var(--accent-color), 0.5);
 }
 
 .email-capture button {
     background-color: var(--accent-color);
     color: var(--primary-text-color);
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     border: none;
-    font-family: var(--font-bold);
-    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .email-capture button:hover {
-    background-color: #ff4d60;
-    transform: translateY(-3px);
+    background-color: #ff5c70;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -471,46 +567,56 @@ footer {
     background-color: var(--dark-gray);
     color: var(--secondary-text-color);
     text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    border-top: 2px solid var(--accent-color);
-    font-size: 0.9rem;
+    padding: 2.5rem 0; /* More padding */
+    margin-top: 4rem; /* More space */
+    border-top: 3px solid var(--accent-color);
+    font-size: 1rem; /* Slightly larger */
+    font-family: var(--font-caption);
+    letter-spacing: 0.5px;
 }
 
-/* Desktop Adjustments */
+/* Desktop Adjustments (larger screens) */
 @media (min-width: 769px) {
     .hero-content h1 {
-        font-size: 6rem;
+        font-size: 7.5rem; /* Even larger heading */
+        letter-spacing: 5px;
     }
 
     .hero-content p {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     .cta-button {
-        padding: 1.2rem 2.5rem;
-        font-size: 1.8rem;
+        padding: 1.5rem 3.5rem;
+        font-size: 2rem;
     }
 
     .countdown-item span {
-        font-size: 3.5rem;
+        font-size: 4.5rem; /* Larger numbers */
     }
 
     .countdown-item div {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     section h2 {
-        font-size: 4.5rem;
+        font-size: 5.5rem; /* Larger section headings */
     }
 
     .about-content {
         flex-direction: row;
         text-align: left;
         justify-content: center;
-        gap: 4rem;
+        gap: 5rem; /* More space */
     }
     .about-text {
-        max-width: 600px;
+        max-width: 700px; /* Adjust as needed */
+    }
+    .about-text p {
+        font-size: 1.3rem; /* Slightly larger */
+    }
+
+    .email-capture {
+        padding: 4rem; /* More padding */
     }
 }
