@@ -1,20 +1,26 @@
-/* --- Global Gritty & Professional Setup --- */
+/* --- Global Gritty & Hoodrich Setup --- */
 :root {
-    --primary-text-color: #f0f0f0;      /* Bright off-white for contrast */
-    --secondary-text-color: #a8a8a8;    /* Muted gray for secondary info */
-    --background-color: #0c0c0c;        /* Deep, stark black for background */
-    --accent-color: #e63946;            /* A vibrant, slightly aggressive red */
-    --dark-elements: #1a1a1a;           /* Darker gray for headers, footers, boxes */
-    --border-color-light: #444444;      /* For subtle, distressed borders */
-    --grime-texture-color: #222222;     /* For subtle background noise */
+    /* Updated Color Palette for Hoodrich Vibe */
+    --primary-text-color: #f8f8f8;      /* Slightly brighter off-white for contrast */
+    --secondary-text-color: #c0c0c0;    /* Lighter gray for secondary info, for better contrast with new primary */
+    --background-color: #050505;        /* Even deeper, richer black for background */
+    --accent-color: #FFD700;            /* GOLD! The core of the hoodrich aesthetic */
+    --accent-color-light: #FFEA00;      /* Lighter gold for gradients/hovers */
+    --secondary-accent-color: #8A2BE2; /* Royal Purple for secondary pop, replaces red */
+    --dark-elements: #121212;           /* Darker gray for headers, footers, boxes, richer */
+    --border-color-light: #555555;      /* For subtle, distressed borders, slightly softer */
+    --grime-texture-color: #1a1a1a;     /* For subtle background noise, deeper */
 
-    --font-heading: 'Oswald', sans-serif; /* For bold, impactful headlines */
-    --font-body: 'Roboto Mono', monospace; /* For a techy, raw feel */
-    --font-caption: 'Inter', sans-serif; /* For smaller, readable text */
+    /* Updated Fonts for Hoodrich Vibe */
+    --font-heading: 'Oswald', sans-serif; /* Retain Oswald, but use for bold, impactful headlines */
+    --font-heading-decorative: 'Cinzel Decorative', serif; /* New: for luxurious, ornate titles */
+    --font-body: 'Montserrat', sans-serif; /* Softer, more readable, yet modern for body */
+    --font-caption: 'Roboto', sans-serif; /* For smaller, readable text, common and clear */
 }
 
 /* Import Google Fonts - Ensure these are linked in your HTML files! */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&family=Roboto+Mono:wght@400;500;700&family=Inter:wght@300;400;600&display=swap');
+/* Added Cinzel Decorative and Montserrat, updated others for new weights if needed */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&family=Montserrat:wght@400;500;700&family=Cinzel+Decorative:wght@400;700;900&family=Roboto:wght@300;400;600&display=swap');
 
 /* --- Basic Reset & Gritty Overlays --- */
 * {
@@ -24,7 +30,7 @@
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-body); /* Changed body font to Montserrat */
     background-color: var(--background-color);
     color: var(--primary-text-color);
     line-height: 1.7;
@@ -34,7 +40,7 @@ body {
     position: relative; /* For pseudo-elements */
 }
 
-/* Subtle overall noise/grain texture */
+/* Subtle overall noise/grain texture (retained) */
 body::before {
     content: '';
     position: fixed;
@@ -42,10 +48,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Use a very subtle noise/grain image or generated pattern */
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAXSURBVBgZBcYAAQAACAAg/zU/sQAAAP8A4y0jBQA987qjAAAAAElFTkSuQmCC'); /* Tiny noise pattern */
     background-size: 2px 2px;
-    opacity: 0.05; /* Very subtle */
+    opacity: 0.08; /* Slightly more visible for texture */
     pointer-events: none; /* Don't interfere with clicks */
     z-index: 9999; /* Always on top */
 }
@@ -73,7 +78,7 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Deeper shadow */
-    border-bottom: 3px solid var(--accent-color); /* Strong accent line */
+    border-bottom: 3px solid var(--accent-color); /* Now gold accent line */
 }
 
 nav {
@@ -84,19 +89,19 @@ nav {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 3rem; /* Larger, more aggressive */
-    color: var(--accent-color);
+    font-family: var(--font-heading-decorative); /* More luxurious logo font */
+    font-size: 3.5rem; /* Larger, more aggressive */
+    color: var(--accent-color); /* Gold logo */
     text-decoration: none;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); /* Sharper shadow */
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9); /* Sharper shadow */
+    letter-spacing: 3px; /* More spacing */
+    text-transform: capitalize; /* Title case for more elegance */
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo:hover {
-    color: #ff6372; /* Slightly brighter on hover */
-    text-shadow: 4px 4px 12px rgba(230, 57, 70, 0.8);
+    color: var(--accent-color-light); /* Brighter gold on hover */
+    text-shadow: 4px 4px 15px rgba(255, 215, 0, 0.8); /* Stronger gold glow */
 }
 
 .nav-links {
@@ -108,13 +113,14 @@ nav {
 .nav-links a {
     color: var(--primary-text-color);
     text-decoration: none;
-    font-family: var(--font-heading);
-    font-size: 1.4rem; /* More prominent */
+    font-family: var(--font-body); /* Changed nav links font to Montserrat */
+    font-size: 1.4rem; /* Prominent */
     transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
     position: relative;
     padding-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 700; /* Bolder nav links */
 }
 
 .nav-links a::after {
@@ -122,16 +128,16 @@ nav {
     position: absolute;
     width: 0;
     height: 4px;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Gold underline */
     left: 0;
     bottom: 0;
-    transition: width 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Springy effect */
+    transition: width 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Gold on hover */
     transform: translateY(-3px);
-    text-shadow: 0 0 10px rgba(var(--accent-color), 0.7);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Gold glow */
 }
 
 .nav-links a:hover::after {
@@ -142,7 +148,7 @@ nav {
     display: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 8px; /* More spaced */
+    gap: 8px;
 }
 
 .hamburger span {
@@ -152,7 +158,7 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* --- Mobile Navigation --- */
+/* --- Mobile Navigation (retained) --- */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -221,24 +227,26 @@ nav {
     background-image: url('YOUR_FLAGSHIP_IMAGE_URL_HERE');
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%) brightness(30%) contrast(200%) sepia(10%) hue-rotate(15deg); /* Harsh, distressed filter */
-    transform: scale(1.05); /* Slight zoom for intensity */
-    opacity: 0.8; /* Allow some overlay */
+    /* Adjusted filter for a richer, more luxurious feel */
+    filter: grayscale(80%) brightness(40%) contrast(180%) sepia(20%) hue-rotate(30deg) saturate(150%);
+    transform: scale(1.05);
+    opacity: 0.7; /* Slightly less opaque to let the image through */
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 3rem; /* More generous padding */
-    background-color: rgba(0, 0, 0, 0.85); /* More opaque overlay */
-    border: 5px solid var(--accent-color); /* Thicker, bolder border */
-    box-shadow: 0 0 40px rgba(var(--accent-color), 0.9); /* Intense glow */
-    animation: fadeInScale 2s ease-out forwards; /* Longer, more dramatic entrance */
+    padding: 3.5rem; /* More generous padding */
+    background-color: rgba(0, 0, 0, 0.9); /* More opaque overlay */
+    border: 5px solid var(--accent-color); /* Thicker, bolder GOLD border */
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.9); /* Intense GOLD glow */
+    animation: fadeInScale 2s ease-out forwards;
     max-width: 900px;
     width: 90%;
-    transform: skewX(-2deg); /* Subtle tilt for aggression */
-    border-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="9" height="9" stroke="rgb(230,57,70)" stroke-width="1" fill="none"/><path d="M0 0L10 10M0 10L10 0" stroke="rgb(230,57,70)" stroke-opacity="0.3"/></svg>') 10 repeat; /* Gritty border effect */
+    transform: skewX(-2deg);
+    /* Updated border image for a more luxurious texture */
+    border-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="9" height="9" stroke="rgb(255,215,0)" stroke-width="1" fill="none"/><path d="M0 0L10 10M0 10L10 0" stroke="rgb(255,215,0)" stroke-opacity="0.3"/></svg>') 10 repeat;
 }
 
 @keyframes fadeInScale {
@@ -247,16 +255,22 @@ nav {
 }
 
 .hero-content h1 {
-    font-family: var(--font-heading);
-    font-size: 6rem; /* Even larger, more commanding */
+    font-family: var(--font-heading-decorative); /* Luxurious decorative font for H1 */
+    font-size: 6.5rem; /* Even larger, more commanding */
     margin-bottom: 1.8rem;
-    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.98);
-    letter-spacing: 4px;
+    /* Gold gradient and stroke for main hero title */
+    background: linear-gradient(45deg, var(--accent-color) 0%, var(--accent-color-light) 50%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none; /* Remove default shadow for gradient text */
+    -webkit-text-stroke: 1.5px rgba(255, 215, 0, 0.3); /* Subtle gold stroke */
+    letter-spacing: 5px; /* More spacing */
     line-height: 1;
     text-transform: uppercase;
     animation: glitchEffect 2s infinite alternate steps(2, start);
-    color: var(--primary-text-color);
+    /* color: var(--primary-text-color); REMOVED: using gradient fill */
 }
+/* Glitch effect adapted for gold tones */
 @keyframes glitchEffect {
     0% { text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.98); }
     20% { text-shadow: -6px -6px 12px rgba(var(--accent-color), 0.7); }
@@ -267,40 +281,42 @@ nav {
 }
 
 .hero-content p {
-    font-size: 1.7rem; /* Larger and clearer */
+    font-size: 1.8rem; /* Larger and clearer */
     margin-bottom: 3rem;
-    color: var(--secondary-text-color);
+    color: var(--secondary-text-color); /* Lighter gray for readability */
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    font-family: var(--font-body);
+    font-family: var(--font-body); /* Changed to Montserrat */
     font-weight: 500;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-text-color);
-    padding: 1.5rem 3.5rem; /* Large, bold button */
-    font-size: 1.8rem; /* Prominent text */
+    background-color: var(--accent-color); /* Gold button background */
+    color: var(--dark-elements); /* Dark text on gold button */
+    padding: 1.5rem 3.5rem;
+    font-size: 1.8rem;
     font-family: var(--font-heading);
     text-decoration: none;
     border: 3px solid var(--primary-text-color); /* Strong contrasting border */
     cursor: pointer;
     transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-    box-shadow: 0 10px 25px rgba(var(--accent-color), 0.7); /* Deep shadow */
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.7); /* Deep gold shadow */
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transform: skewX(-2deg); /* Match hero content tilt */
+    transform: skewX(-2deg);
+    font-weight: 700; /* Bolder button text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow for depth */
 }
 
 .cta-button:hover {
-    background-color: #ff5c70;
-    transform: translateY(-8px) scale(1.03) skewX(-2deg); /* More pronounced lift */
-    box-shadow: 0 15px 30px rgba(var(--accent-color), 0.9);
-    border-color: #f0f0f0; /* Maintain clear border */
+    background-color: var(--accent-color-light); /* Brighter gold on hover */
+    transform: translateY(-8px) scale(1.03) skewX(-2deg);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.9); /* More intense gold shadow */
+    border-color: var(--secondary-accent-color); /* Royal purple border on hover for contrast */
 }
 
 .cta-button::before {
@@ -310,7 +326,7 @@ nav {
     left: 50%;
     width: 300%;
     height: 300%;
-    background-color: rgba(255, 255, 255, 0.2); /* More visible splash */
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     transition: all 0.75s ease-out;
     transform: translate(-50%, -50%) scale(0);
@@ -324,20 +340,20 @@ nav {
 
 /* --- Countdown Timer --- */
 .countdown-container {
-    margin-top: 5rem; /* More separation */
+    margin-top: 5rem;
     padding: 2.5rem;
-    background-color: rgba(0, 0, 0, 0.9); /* Nearly opaque */
-    border: 4px dashed var(--secondary-text-color); /* More prominent dashed border */
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 4px dashed var(--accent-color); /* Dashed GOLD border */
     display: inline-block;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9); /* Stronger shadow */
-    transform: skewX(2deg); /* Opposite tilt for contrast */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+    transform: skewX(2deg);
 }
 
 .countdown-container p {
-    font-family: var(--font-heading);
-    font-size: 2.2rem; /* Larger */
+    font-family: var(--font-heading); /* Kept Oswald for strong timer text */
+    font-size: 2.2rem;
     margin-bottom: 2rem;
-    color: var(--accent-color);
+    color: var(--accent-color); /* Gold text */
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -346,23 +362,23 @@ nav {
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 2.5rem; /* More space between blocks */
+    gap: 2.5rem;
 }
 
 .countdown-item {
     background-color: var(--dark-elements);
-    padding: 1.5rem 2.5rem; /* Larger blocks */
-    border: 3px solid var(--accent-color); /* Thicker, defined border */
+    padding: 1.5rem 2.5rem;
+    border: 3px solid var(--accent-color); /* Thicker, defined GOLD border */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    min-width: 120px; /* Wider blocks */
+    min-width: 120px;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    transform: skewX(-2deg); /* Counter-tilt for individual items */
+    transform: skewX(-2deg);
 }
 
 .countdown-item:hover {
-    transform: translateY(-7px) skewX(-2deg) scale(1.02); /* Lift and slight scale */
-    background-color: #2a2a2a; /* Darker on hover */
+    transform: translateY(-7px) skewX(-2deg) scale(1.02);
+    background-color: #2a2a2a;
 }
 
 .countdown-item span {
@@ -379,21 +395,21 @@ nav {
     font-size: 1.1rem;
     color: var(--secondary-text-color);
     text-transform: uppercase;
-    font-family: var(--font-caption);
+    font-family: var(--font-caption); /* Changed to Roboto */
     letter-spacing: 1px;
 }
 
 /* --- General Section Styling --- */
 section {
     padding: 8rem 0;
-    border-top: 8px solid var(--dark-elements); /* Very thick, strong divider */
+    border-top: 8px solid var(--dark-elements);
     border-bottom: 8px solid var(--dark-elements);
     background-color: var(--background-color);
     position: relative;
-    overflow: hidden; /* To contain any pseudo-elements */
+    overflow: hidden;
 }
 
-/* Subtle gritty texture overlay on sections */
+/* Subtle gritty texture overlay on sections (retained) */
 section::before {
     content: '';
     position: absolute;
@@ -401,42 +417,42 @@ section::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAXSURBVBgZBcYAAQAACAAg/zU/sQAAAP8A4y0jBQA987qjAAAAAElFTkSuQmCC'); /* Same noise pattern */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAXSURBVBgZBcYAAQAACAAg/zU/sQAAAP8A4y0jBQA987qjAAAAAElFTnSuQmCC'); /* Same noise pattern */
     background-size: 2px 2px;
-    opacity: 0.03; /* Even more subtle on sections */
+    opacity: 0.05; /* Slightly more visible */
     pointer-events: none;
     z-index: 0;
 }
 
 section:nth-of-type(even) {
-    background-color: #121212; /* Slightly different dark shade for contrast */
+    background-color: #0A0A0A; /* Even darker shade for contrast */
 }
 
 section h2 {
-    font-family: var(--font-heading);
-    font-size: 5rem; /* Massive headings */
-    color: var(--accent-color);
+    font-family: var(--font-heading-decorative); /* Luxurious decorative font for section headings */
+    font-size: 5.5rem; /* Massive headings, slightly adjusted */
+    color: var(--accent-color); /* Gold headings */
     margin-bottom: 4rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+    text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.95); /* Deeper shadow */
     position: relative;
-    padding-bottom: 20px; /* Space for accent line */
+    padding-bottom: 20px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 section h2::after {
     content: '';
     position: absolute;
-    width: 150px; /* Longer underline */
-    height: 6px; /* Thicker */
+    width: 150px;
+    height: 6px;
     background-color: var(--primary-text-color);
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(var(--primary-text-color), 0.5); /* Subtle glow */
+    box-shadow: 0 0 12px rgba(var(--primary-text-color), 0.7); /* Stronger glow */
 }
 
 /* --- Shop Section --- */
@@ -449,22 +465,23 @@ section h2::after {
     justify-content: center;
     font-size: 2.2rem;
     color: var(--secondary-text-color);
-    border: 4px dashed var(--accent-color); /* Thicker dashed border */
+    border: 4px dashed var(--accent-color); /* Thicker dashed GOLD border */
     margin: 3rem auto;
     text-align: center;
     padding: 2.5rem;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
 #shop .shop-embed-placeholder p:first-child {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading); /* Oswald for impact */
     color: var(--primary-text-color);
     margin-bottom: 1.5rem;
     font-size: 2.5rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 #shop .shop-embed-placeholder p {
     font-size: 1.3rem;
-    font-family: var(--font-caption);
+    font-family: var(--font-body); /* Changed to Montserrat */
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -480,17 +497,19 @@ section h2::after {
     font-family: var(--font-heading);
     font-size: 1.6rem;
     text-decoration: none;
-    border: 3px solid var(--accent-color);
+    border: 3px solid var(--accent-color); /* GOLD border */
     transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 700; /* Bolder button text */
 }
 #shop .shop-link-button:hover {
-    background-color: var(--accent-color);
-    border-color: var(--primary-text-color);
+    background-color: var(--accent-color); /* Gold background on hover */
+    border-color: var(--secondary-accent-color); /* Royal purple border on hover */
+    color: var(--dark-elements); /* Dark text on gold hover */
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(var(--accent-color), 0.8);
+    box-shadow: 0 12px 25px rgba(255, 215, 0, 0.8); /* Gold shadow on hover */
 }
 
 
@@ -498,7 +517,7 @@ section h2::after {
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem; /* More space */
+    gap: 3.5rem;
     align-items: center;
     text-align: center;
     padding: 0 1.5rem;
@@ -506,18 +525,18 @@ section h2::after {
 
 .about-image-container {
     position: relative;
-    width: 320px; /* Slightly larger container */
+    width: 320px;
     height: 320px;
-    border: 6px solid var(--accent-color); /* Strong, defined border */
-    box-shadow: 0 0 30px rgba(230, 57, 70, 0.8);
+    border: 6px solid var(--accent-color); /* Strong, defined GOLD border */
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.9); /* Intense GOLD glow */
     overflow: hidden;
-    transform: rotate(-3deg); /* Aggressive tilt */
+    transform: rotate(-3deg);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .about-image-container:hover {
-    transform: rotate(0deg) scale(1.05); /* Straighten and zoom on hover */
-    box-shadow: 0 0 50px rgba(230, 57, 70, 1);
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 0 60px rgba(255, 215, 0, 1); /* Even stronger gold glow on hover */
 }
 
 .about-image {
@@ -525,15 +544,14 @@ section h2::after {
     height: 100%;
     object-fit: cover;
     /* !!! IMPORTANT: REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL IMAGE !!! */
-    background-image: url('YOUR_FACE_IMAGE_URL_HERE'); /* Use background-image for filters */
+    background-image: url('YOUR_FACE_IMAGE_URL_HERE');
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%) brightness(50%) contrast(150%) sepia(5%); /* Gritty filter */
+    /* Adjusted filter for a richer, more luxurious feel */
+    filter: grayscale(80%) brightness(50%) contrast(150%) sepia(10%) hue-rotate(20deg) saturate(120%);
     transition: filter 0.5s ease;
-    display: block; /* Ensure it behaves as a block */
+    display: block;
 }
-/* No broken image icon needed, using background-image for filters */
-
 
 .about-image-container:hover .about-image {
     filter: grayscale(0%) brightness(100%) contrast(100%) sepia(0%); /* Full color on hover */
@@ -541,20 +559,20 @@ section h2::after {
 
 
 .about-text {
-    max-width: 850px; /* Wider text block */
+    max-width: 850px;
     margin: 0 auto;
 }
 .about-text p {
-    font-size: 1.3rem; /* Larger, more readable */
+    font-size: 1.3rem;
     margin-bottom: 1.8rem;
-    color: var(--secondary-text-color);
-    font-family: var(--font-body);
+    color: var(--secondary-text-color); /* Lighter gray for readability */
+    font-family: var(--font-body); /* Changed to Montserrat */
 }
 .about-text strong {
-    color: var(--accent-color);
-    font-family: var(--font-heading);
+    color: var(--accent-color); /* Gold strong text */
+    font-family: var(--font-heading); /* Oswald for impact */
     letter-spacing: 0.8px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Deeper shadow */
 }
 
 
@@ -562,47 +580,48 @@ section h2::after {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 3rem; /* More space */
+    gap: 3rem;
     flex-wrap: wrap;
-    margin-bottom: 4.5rem; /* More space before email capture */
+    margin-bottom: 4.5rem;
 }
 
 .social-links a {
     color: var(--primary-text-color);
-    font-size: 4rem; /* Even larger icons */
+    font-size: 4.2rem; /* Even larger icons */
     transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.8)); /* Deeper shadow */
+    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.9)); /* Deeper shadow */
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
-    transform: translateY(-10px) scale(1.15); /* More dramatic lift */
-    filter: drop-shadow(3px 3px 10px rgba(var(--accent-color), 0.9));
+    color: var(--accent-color); /* Gold on hover */
+    transform: translateY(-12px) scale(1.2); /* More dramatic lift and scale */
+    filter: drop-shadow(3px 3px 15px rgba(255, 215, 0, 0.9)); /* Intense gold glow */
 }
 
 .email-capture {
     margin-top: 3rem;
     background-color: var(--dark-elements);
-    padding: 3.5rem; /* More padding */
-    border: 4px solid var(--accent-color); /* Thicker, stronger border */
-    max-width: 700px; /* Wider form */
+    padding: 3.5rem;
+    border: 4px solid var(--accent-color); /* Thicker, stronger GOLD border */
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); /* Stronger shadow */
-    transform: skewX(-1deg); /* Subtle tilt */
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+    transform: skewX(-1deg);
 }
 
 .email-capture h3 {
-    font-family: var(--font-heading);
-    font-size: 2.8rem; /* Larger heading */
+    font-family: var(--font-heading); /* Oswald for impact */
+    font-size: 2.8rem;
     color: var(--primary-text-color);
     margin-bottom: 2.2rem;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    text-transform: uppercase; /* All caps for heading */
 }
 
 .email-capture p {
-    font-family: var(--font-caption);
+    font-family: var(--font-body); /* Changed to Montserrat */
     font-size: 1.2rem;
     color: var(--secondary-text-color);
     margin-bottom: 2rem;
@@ -611,46 +630,47 @@ section h2::after {
 .email-capture form {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem; /* More space */
+    gap: 1.8rem;
 }
 
 .email-capture input[type="email"] {
     padding: 1.3rem;
     background-color: #2a2a2a;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--accent-color); /* Gold border */
     color: var(--primary-text-color);
     font-size: 1.3rem;
-    font-family: var(--font-body);
+    font-family: var(--font-body); /* Changed to Montserrat */
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .email-capture input[type="email"]::placeholder {
-    color: #777;
+    color: #888; /* Slightly lighter placeholder */
 }
 .email-capture input[type="email"]:focus {
-    border-color: var(--primary-text-color);
-    box-shadow: 0 0 10px rgba(var(--accent-color), 0.6);
+    border-color: var(--accent-color-light); /* Brighter gold on focus */
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.8); /* Gold glow on focus */
 }
 
 .email-capture button {
-    background-color: var(--accent-color);
-    color: var(--primary-text-color);
+    background-color: var(--accent-color); /* Gold button */
+    color: var(--dark-elements); /* Dark text on gold */
     padding: 1.3rem 2.8rem;
     border: none;
-    font-family: var(--font-heading);
+    font-family: var(--font-heading); /* Oswald for impact */
     font-size: 1.4rem;
     cursor: pointer;
     transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .email-capture button:hover {
-    background-color: #ff5c70;
+    background-color: var(--secondary-accent-color); /* Royal purple on hover */
     transform: translateY(-7px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
 }
 
 
@@ -661,9 +681,9 @@ footer {
     text-align: center;
     padding: 3rem 0;
     margin-top: 5rem;
-    border-top: 4px solid var(--accent-color);
+    border-top: 4px solid var(--accent-color); /* Gold border */
     font-size: 1.1rem;
-    font-family: var(--font-caption);
+    font-family: var(--font-body); /* Changed to Montserrat */
     letter-spacing: 0.8px;
 }
 
@@ -700,10 +720,10 @@ footer {
         flex-direction: row;
         text-align: left;
         justify-content: center;
-        gap: 6rem; /* Even more space */
+        gap: 6rem;
     }
     .about-text {
-        max-width: 750px;
+    max-width: 750px;
     }
     .about-text p {
         font-size: 1.4rem;
@@ -713,15 +733,3 @@ footer {
         padding: 4.5rem;
     }
 }
-
-/* Specific fix for images in HTML files now using background-image */
-.about-image {
-    /* If you still have an <img> tag in HTML, remove it or set display:none.
-       The new CSS uses background-image on .about-image-container directly.
-       Make sure your HTML for the About image looks like this:
-       <div class="about-image-container">
-           <div class="about-image"></div>
-       </div>
-    */
-}
-
