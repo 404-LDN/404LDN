@@ -32,7 +32,7 @@ Project Structure
 
 Setup and Installation
  * Clone the repository (or download):
-   git clone https://github.com/your-username/404-LDN-Website.git
+   git clone https://github.com/404-LDN/404-LDN-Website.git
 cd 404-LDN-Website
 
    If you don't use Git, you can simply download the ZIP file and extract it.
