@@ -1,25 +1,24 @@
-/* --- Global Gritty & Hoodrich Setup --- */
+/* --- Global Gritty & Pink Hoodrich Setup --- */
 :root {
-    /* Updated Color Palette for Hoodrich Vibe */
+    /* Updated Color Palette for Pink Hoodrich Vibe */
     --primary-text-color: #f8f8f8;      /* Slightly brighter off-white for contrast */
-    --secondary-text-color: #c0c0c0;    /* Lighter gray for secondary info, for better contrast with new primary */
+    --secondary-text-color: #c0c0c0;    /* Lighter gray for secondary info, for better contrast */
     --background-color: #050505;        /* Even deeper, richer black for background */
-    --accent-color: #FFD700;            /* GOLD! The core of the hoodrich aesthetic */
-    --accent-color-light: #FFEA00;      /* Lighter gold for gradients/hovers */
-    --secondary-accent-color: #8A2BE2; /* Royal Purple for secondary pop, replaces red */
+    --accent-color: #FF00FF;            /* VIBRANT FUCHSIA/MAGENTA - The new core accent! */
+    --accent-color-light: #FF33FF;      /* Lighter pink for gradients/hovers */
+    --secondary-accent-color: #00FFFF;  /* Cyan/Aqua for secondary pop, creates strong contrast with pink */
     --dark-elements: #121212;           /* Darker gray for headers, footers, boxes, richer */
     --border-color-light: #555555;      /* For subtle, distressed borders, slightly softer */
     --grime-texture-color: #1a1a1a;     /* For subtle background noise, deeper */
 
-    /* Updated Fonts for Hoodrich Vibe */
-    --font-heading: 'Oswald', sans-serif; /* Retain Oswald, but use for bold, impactful headlines */
-    --font-heading-decorative: 'Cinzel Decorative', serif; /* New: for luxurious, ornate titles */
-    --font-body: 'Montserrat', sans-serif; /* Softer, more readable, yet modern for body */
-    --font-caption: 'Roboto', sans-serif; /* For smaller, readable text, common and clear */
+    /* Fonts for Bold Hoodrich Vibe (retaining decorative for impact) */
+    --font-heading: 'Oswald', sans-serif;
+    --font-heading-decorative: 'Cinzel Decorative', serif; /* Still for luxurious, ornate titles */
+    --font-body: 'Montserrat', sans-serif;
+    --font-caption: 'Roboto', sans-serif;
 }
 
 /* Import Google Fonts - Ensure these are linked in your HTML files! */
-/* Added Cinzel Decorative and Montserrat, updated others for new weights if needed */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&family=Montserrat:wght@400;500;700&family=Cinzel+Decorative:wght@400;700;900&family=Roboto:wght@300;400;600&display=swap');
 
 /* --- Basic Reset & Gritty Overlays --- */
@@ -30,14 +29,14 @@
 }
 
 body {
-    font-family: var(--font-body); /* Changed body font to Montserrat */
+    font-family: var(--font-body);
     background-color: var(--background-color);
     color: var(--primary-text-color);
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    position: relative; /* For pseudo-elements */
+    position: relative;
 }
 
 /* Subtle overall noise/grain texture (retained) */
@@ -48,11 +47,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAXSURBVBgZBcYAAQAACAAg/zU/sQAAAP8A4y0jBQA987qjAAAAAElFTkSuQmCC'); /* Tiny noise pattern */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAXSURBVBgZBcYAAQAACAAg/zU/sQAAAP8A4y0jBQA987qjAAAAAElFTkSuQmCC');
     background-size: 2px 2px;
-    opacity: 0.08; /* Slightly more visible for texture */
-    pointer-events: none; /* Don't interfere with clicks */
-    z-index: 9999; /* Always on top */
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 9999;
 }
 
 html {
@@ -77,8 +76,8 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Deeper shadow */
-    border-bottom: 3px solid var(--accent-color); /* Now gold accent line */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    border-bottom: 3px solid var(--accent-color); /* Now vibrant pink accent line */
 }
 
 nav {
@@ -89,38 +88,38 @@ nav {
 }
 
 .logo {
-    font-family: var(--font-heading-decorative); /* More luxurious logo font */
-    font-size: 3.5rem; /* Larger, more aggressive */
-    color: var(--accent-color); /* Gold logo */
+    font-family: var(--font-heading-decorative);
+    font-size: 3.5rem;
+    color: var(--accent-color); /* Pink logo */
     text-decoration: none;
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9); /* Sharper shadow */
-    letter-spacing: 3px; /* More spacing */
-    text-transform: capitalize; /* Title case for more elegance */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+    letter-spacing: 3px;
+    text-transform: capitalize;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo:hover {
-    color: var(--accent-color-light); /* Brighter gold on hover */
-    text-shadow: 4px 4px 15px rgba(255, 215, 0, 0.8); /* Stronger gold glow */
+    color: var(--accent-color-light); /* Brighter pink on hover */
+    text-shadow: 4px 4px 15px rgba(255, 0, 255, 0.8); /* Stronger pink glow */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 3rem; /* More space */
+    gap: 3rem;
 }
 
 .nav-links a {
     color: var(--primary-text-color);
     text-decoration: none;
-    font-family: var(--font-body); /* Changed nav links font to Montserrat */
-    font-size: 1.4rem; /* Prominent */
+    font-family: var(--font-body);
+    font-size: 1.4rem;
     transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
     position: relative;
     padding-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 700; /* Bolder nav links */
+    font-weight: 700;
 }
 
 .nav-links a::after {
@@ -128,16 +127,16 @@ nav {
     position: absolute;
     width: 0;
     height: 4px;
-    background-color: var(--accent-color); /* Gold underline */
+    background-color: var(--accent-color); /* Pink underline */
     left: 0;
     bottom: 0;
     transition: width 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .nav-links a:hover {
-    color: var(--accent-color); /* Gold on hover */
+    color: var(--accent-color); /* Pink on hover */
     transform: translateY(-3px);
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Gold glow */
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7); /* Pink glow */
 }
 
 .nav-links a:hover::after {
@@ -227,96 +226,95 @@ nav {
     background-image: url('YOUR_FLAGSHIP_IMAGE_URL_HERE');
     background-size: cover;
     background-position: center;
-    /* Adjusted filter for a richer, more luxurious feel */
-    filter: grayscale(80%) brightness(40%) contrast(180%) sepia(20%) hue-rotate(30deg) saturate(150%);
+    /* Adjusted filter for pinkish tint */
+    filter: grayscale(70%) brightness(50%) contrast(180%) sepia(50%) hue-rotate(300deg) saturate(200%);
     transform: scale(1.05);
-    opacity: 0.7; /* Slightly less opaque to let the image through */
+    opacity: 0.7;
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 3.5rem; /* More generous padding */
-    background-color: rgba(0, 0, 0, 0.9); /* More opaque overlay */
-    border: 5px solid var(--accent-color); /* Thicker, bolder GOLD border */
-    box-shadow: 0 0 50px rgba(255, 215, 0, 0.9); /* Intense GOLD glow */
+    padding: 4rem; /* Even more generous padding for boldness */
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 6px solid var(--accent-color); /* Thicker, bolder PINK border */
+    box-shadow: 0 0 60px rgba(255, 0, 255, 0.9); /* Intense PINK glow */
     animation: fadeInScale 2s ease-out forwards;
-    max-width: 900px;
+    max-width: 950px; /* Slightly wider for impact */
     width: 90%;
-    transform: skewX(-2deg);
-    /* Updated border image for a more luxurious texture */
-    border-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="9" height="9" stroke="rgb(255,215,0)" stroke-width="1" fill="none"/><path d="M0 0L10 10M0 10L10 0" stroke="rgb(255,215,0)" stroke-opacity="0.3"/></svg>') 10 repeat;
+    transform: skewX(-3deg); /* Slightly more aggressive tilt */
+    /* Updated border image for a more vibrant texture */
+    border-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="9" height="9" stroke="rgb(255,0,255)" stroke-width="1" fill="none"/><path d="M0 0L10 10M0 10L10 0" stroke="rgb(255,0,255)" stroke-opacity="0.3"/></svg>') 10 repeat;
 }
 
 @keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.6) skewX(-2deg); }
-    to { opacity: 1; transform: scale(1) skewX(-2deg); }
+    from { opacity: 0; transform: scale(0.6) skewX(-3deg); }
+    to { opacity: 1; transform: scale(1) skewX(-3deg); }
 }
 
 .hero-content h1 {
-    font-family: var(--font-heading-decorative); /* Luxurious decorative font for H1 */
-    font-size: 6.5rem; /* Even larger, more commanding */
-    margin-bottom: 1.8rem;
-    /* Gold gradient and stroke for main hero title */
+    font-family: var(--font-heading-decorative);
+    font-size: 7.5rem; /* EVEN LARGER, more commanding */
+    margin-bottom: 2rem;
+    /* Pink gradient and stroke for main hero title */
     background: linear-gradient(45deg, var(--accent-color) 0%, var(--accent-color-light) 50%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: none; /* Remove default shadow for gradient text */
-    -webkit-text-stroke: 1.5px rgba(255, 215, 0, 0.3); /* Subtle gold stroke */
-    letter-spacing: 5px; /* More spacing */
-    line-height: 1;
+    text-shadow: none;
+    -webkit-text-stroke: 2px rgba(255, 0, 255, 0.4); /* Stronger pink stroke */
+    letter-spacing: 6px; /* More spacing */
+    line-height: 0.9; /* Tighter line height for boldness */
     text-transform: uppercase;
     animation: glitchEffect 2s infinite alternate steps(2, start);
-    /* color: var(--primary-text-color); REMOVED: using gradient fill */
 }
-/* Glitch effect adapted for gold tones */
+/* Glitch effect adapted for pink tones */
 @keyframes glitchEffect {
-    0% { text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.98); }
-    20% { text-shadow: -6px -6px 12px rgba(var(--accent-color), 0.7); }
-    40% { text-shadow: 6px -6px 12px rgba(var(--accent-color), 0.7); }
-    60% { text-shadow: -6px 6px 12px rgba(var(--accent-color), 0.7); }
-    80% { text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.98); }
+    0% { text-shadow: 8px 8px 15px rgba(0, 0, 0, 0.98); } /* Deeper shadow */
+    20% { text-shadow: -8px -8px 15px rgba(var(--accent-color), 0.8); }
+    40% { text-shadow: 8px -8px 15px rgba(var(--accent-color), 0.8); }
+    60% { text-shadow: -8px 8px 15px rgba(var(--accent-color), 0.8); }
+    80% { text-shadow: 8px 8px 15px rgba(0, 0, 0, 0.98); }
     100% { text-shadow: 0 0 0 rgba(0, 0, 0, 0.98); }
 }
 
 .hero-content p {
-    font-size: 1.8rem; /* Larger and clearer */
-    margin-bottom: 3rem;
-    color: var(--secondary-text-color); /* Lighter gray for readability */
-    max-width: 750px;
+    font-size: 2rem; /* Even larger and clearer */
+    margin-bottom: 3.5rem;
+    color: var(--secondary-text-color);
+    max-width: 800px; /* Slightly wider for readability */
     margin-left: auto;
     margin-right: auto;
-    font-family: var(--font-body); /* Changed to Montserrat */
-    font-weight: 500;
+    font-family: var(--font-body);
+    font-weight: 600; /* Bolder body text */
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--accent-color); /* Gold button background */
-    color: var(--dark-elements); /* Dark text on gold button */
-    padding: 1.5rem 3.5rem;
-    font-size: 1.8rem;
+    background-color: var(--accent-color); /* Pink button background */
+    color: var(--dark-elements); /* Dark text on pink button */
+    padding: 1.8rem 4rem; /* Larger button */
+    font-size: 2rem; /* Even larger button text */
     font-family: var(--font-heading);
     text-decoration: none;
-    border: 3px solid var(--primary-text-color); /* Strong contrasting border */
+    border: 4px solid var(--primary-text-color); /* Thicker contrasting border */
     cursor: pointer;
     transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.7); /* Deep gold shadow */
+    box-shadow: 0 12px 30px rgba(255, 0, 255, 0.8); /* Deeper pink shadow */
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transform: skewX(-2deg);
-    font-weight: 700; /* Bolder button text */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow for depth */
+    letter-spacing: 3px; /* More spacing */
+    transform: skewX(-3deg); /* Match hero content tilt */
+    font-weight: 800; /* EVEN BOLDER button text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger text shadow */
 }
 
 .cta-button:hover {
-    background-color: var(--accent-color-light); /* Brighter gold on hover */
-    transform: translateY(-8px) scale(1.03) skewX(-2deg);
-    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.9); /* More intense gold shadow */
-    border-color: var(--secondary-accent-color); /* Royal purple border on hover for contrast */
+    background-color: var(--accent-color-light); /* Brighter pink on hover */
+    transform: translateY(-10px) scale(1.05) skewX(-3deg); /* More pronounced lift */
+    box-shadow: 0 18px 40px rgba(255, 0, 255, 0.9); /* More intense pink shadow */
+    border-color: var(--secondary-accent-color); /* Cyan border on hover for strong contrast */
 }
 
 .cta-button::before {
@@ -326,7 +324,7 @@ nav {
     left: 50%;
     width: 300%;
     height: 300%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.25); /* More visible splash */
     border-radius: 50%;
     transition: all 0.75s ease-out;
     transform: translate(-50%, -50%) scale(0);
@@ -340,70 +338,72 @@ nav {
 
 /* --- Countdown Timer --- */
 .countdown-container {
-    margin-top: 5rem;
-    padding: 2.5rem;
+    margin-top: 6rem; /* More separation */
+    padding: 3rem; /* More padding */
     background-color: rgba(0, 0, 0, 0.9);
-    border: 4px dashed var(--accent-color); /* Dashed GOLD border */
+    border: 5px dashed var(--accent-color); /* Dashed PINK border */
     display: inline-block;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
-    transform: skewX(2deg);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+    transform: skewX(3deg); /* Opposite tilt for contrast */
 }
 
 .countdown-container p {
-    font-family: var(--font-heading); /* Kept Oswald for strong timer text */
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    color: var(--accent-color); /* Gold text */
+    font-family: var(--font-heading);
+    font-size: 2.5rem; /* Larger timer text */
+    margin-bottom: 2.5rem;
+    color: var(--accent-color); /* Pink text */
     text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 4px; /* More spacing */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Deeper shadow */
 }
 
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
+    gap: 3rem; /* More space between blocks */
 }
 
 .countdown-item {
     background-color: var(--dark-elements);
-    padding: 1.5rem 2.5rem;
-    border: 3px solid var(--accent-color); /* Thicker, defined GOLD border */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    min-width: 120px;
+    padding: 1.8rem 3rem; /* Larger blocks */
+    border: 4px solid var(--accent-color); /* Thicker, defined PINK border */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    min-width: 130px; /* Wider blocks */
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    transform: skewX(-2deg);
+    transform: skewX(-3deg); /* Counter-tilt for individual items */
 }
 
 .countdown-item:hover {
-    transform: translateY(-7px) skewX(-2deg) scale(1.02);
+    transform: translateY(-8px) skewX(-3deg) scale(1.03); /* Lift and slight scale */
     background-color: #2a2a2a;
 }
 
 .countdown-item span {
     display: block;
     font-family: var(--font-heading);
-    font-size: 4rem; /* Big, bold numbers */
+    font-size: 4.5rem; /* BIGGER, bold numbers */
     color: var(--primary-text-color);
     line-height: 1;
-    margin-bottom: 0.8rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Deeper shadow */
+    font-weight: 800; /* EVEN BOLDER NUMBERS */
 }
 
 .countdown-item div {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--secondary-text-color);
     text-transform: uppercase;
-    font-family: var(--font-caption); /* Changed to Roboto */
-    letter-spacing: 1px;
+    font-family: var(--font-caption);
+    letter-spacing: 1.5px; /* More spacing */
+    font-weight: 500;
 }
 
 /* --- General Section Styling --- */
 section {
-    padding: 8rem 0;
-    border-top: 8px solid var(--dark-elements);
-    border-bottom: 8px solid var(--dark-elements);
+    padding: 9rem 0; /* More padding for separation */
+    border-top: 10px solid var(--dark-elements); /* Very thick, strong divider */
+    border-bottom: 10px solid var(--dark-elements);
     background-color: var(--background-color);
     position: relative;
     overflow: hidden;
@@ -417,72 +417,74 @@ section::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAXSURBVBgZBcYAAQAACAAg/zU/sQAAAP8A4y0jBQA987qjAAAAAElFTnSuQmCC'); /* Same noise pattern */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0gAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAXSURBVBgZBcYAAQAACAAg/zU/sQAAAP8A4y0jBQA987qjAAAAAElFTkSuQmCC');
     background-size: 2px 2px;
-    opacity: 0.05; /* Slightly more visible */
+    opacity: 0.05;
     pointer-events: none;
     z-index: 0;
 }
 
 section:nth-of-type(even) {
-    background-color: #0A0A0A; /* Even darker shade for contrast */
+    background-color: #0A0A0A;
 }
 
 section h2 {
-    font-family: var(--font-heading-decorative); /* Luxurious decorative font for section headings */
-    font-size: 5.5rem; /* Massive headings, slightly adjusted */
-    color: var(--accent-color); /* Gold headings */
-    margin-bottom: 4rem;
+    font-family: var(--font-heading-decorative);
+    font-size: 6rem; /* Even larger section headings */
+    color: var(--accent-color); /* Pink headings */
+    margin-bottom: 4.5rem; /* More space */
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.95); /* Deeper shadow */
+    letter-spacing: 5px; /* More spacing */
+    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.98); /* Deeper shadow */
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 25px; /* More space for accent line */
     transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-weight: 700; /* Bolder decorative text */
 }
 
 section h2::after {
     content: '';
     position: absolute;
-    width: 150px;
-    height: 6px;
+    width: 180px; /* Longer underline */
+    height: 8px; /* Thicker */
     background-color: var(--primary-text-color);
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-    border-radius: 3px;
-    box-shadow: 0 0 12px rgba(var(--primary-text-color), 0.7); /* Stronger glow */
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(var(--primary-text-color), 0.8); /* Stronger glow */
 }
 
 /* --- Shop Section --- */
 #shop .shop-embed-placeholder {
-    min-height: 650px;
+    min-height: 700px; /* Taller placeholder */
     background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2.2rem;
+    font-size: 2.5rem; /* Larger font */
     color: var(--secondary-text-color);
-    border: 4px dashed var(--accent-color); /* Thicker dashed GOLD border */
-    margin: 3rem auto;
+    border: 5px dashed var(--accent-color); /* Thicker dashed PINK border */
+    margin: 3.5rem auto; /* More margin */
     text-align: center;
-    padding: 2.5rem;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    padding: 3rem; /* More padding */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9); /* Stronger shadow */
 }
 #shop .shop-embed-placeholder p:first-child {
-    font-family: var(--font-heading); /* Oswald for impact */
+    font-family: var(--font-heading);
     color: var(--primary-text-color);
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
+    margin-bottom: 1.8rem;
+    font-size: 2.8rem; /* Larger */
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 #shop .shop-embed-placeholder p {
-    font-size: 1.3rem;
-    font-family: var(--font-body); /* Changed to Montserrat */
-    max-width: 80%;
+    font-size: 1.4rem;
+    font-family: var(--font-body);
+    max-width: 85%; /* Wider for readability */
     margin-left: auto;
     margin-right: auto;
 }
@@ -490,26 +492,26 @@ section h2::after {
 #shop .shop-link-button {
     display: block;
     width: fit-content;
-    margin: 3rem auto;
+    margin: 3.5rem auto;
     background-color: var(--dark-elements);
     color: var(--primary-text-color);
-    padding: 1.5rem 3.5rem;
+    padding: 1.8rem 4rem; /* Larger button */
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.8rem; /* Larger button text */
     text-decoration: none;
-    border: 3px solid var(--accent-color); /* GOLD border */
+    border: 4px solid var(--accent-color); /* PINK border */
     transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700; /* Bolder button text */
+    letter-spacing: 3px; /* More spacing */
+    font-weight: 800; /* EVEN BOLDER button text */
 }
 #shop .shop-link-button:hover {
-    background-color: var(--accent-color); /* Gold background on hover */
-    border-color: var(--secondary-accent-color); /* Royal purple border on hover */
-    color: var(--dark-elements); /* Dark text on gold hover */
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(255, 215, 0, 0.8); /* Gold shadow on hover */
+    background-color: var(--accent-color); /* Pink background on hover */
+    border-color: var(--secondary-accent-color); /* Cyan border on hover */
+    color: var(--dark-elements); /* Dark text on pink hover */
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(255, 0, 255, 0.9); /* Pink shadow on hover */
 }
 
 
@@ -517,26 +519,26 @@ section h2::after {
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 4rem; /* More space */
     align-items: center;
     text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 2rem; /* More padding */
 }
 
 .about-image-container {
     position: relative;
-    width: 320px;
-    height: 320px;
-    border: 6px solid var(--accent-color); /* Strong, defined GOLD border */
-    box-shadow: 0 0 35px rgba(255, 215, 0, 0.9); /* Intense GOLD glow */
+    width: 350px; /* Larger container */
+    height: 350px;
+    border: 7px solid var(--accent-color); /* Thicker, defined PINK border */
+    box-shadow: 0 0 45px rgba(255, 0, 255, 0.95); /* Intense PINK glow */
     overflow: hidden;
-    transform: rotate(-3deg);
+    transform: rotate(-4deg); /* More aggressive tilt */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .about-image-container:hover {
-    transform: rotate(0deg) scale(1.05);
-    box-shadow: 0 0 60px rgba(255, 215, 0, 1); /* Even stronger gold glow on hover */
+    transform: rotate(0deg) scale(1.07); /* Straighten and zoom more on hover */
+    box-shadow: 0 0 70px rgba(255, 0, 255, 1); /* Even stronger pink glow on hover */
 }
 
 .about-image {
@@ -547,8 +549,8 @@ section h2::after {
     background-image: url('YOUR_FACE_IMAGE_URL_HERE');
     background-size: cover;
     background-position: center;
-    /* Adjusted filter for a richer, more luxurious feel */
-    filter: grayscale(80%) brightness(50%) contrast(150%) sepia(10%) hue-rotate(20deg) saturate(120%);
+    /* Adjusted filter for pinkish tint */
+    filter: grayscale(70%) brightness(55%) contrast(160%) sepia(40%) hue-rotate(300deg) saturate(180%);
     transition: filter 0.5s ease;
     display: block;
 }
@@ -557,22 +559,23 @@ section h2::after {
     filter: grayscale(0%) brightness(100%) contrast(100%) sepia(0%); /* Full color on hover */
 }
 
-
 .about-text {
-    max-width: 850px;
+    max-width: 900px; /* Wider text block */
     margin: 0 auto;
 }
 .about-text p {
-    font-size: 1.3rem;
-    margin-bottom: 1.8rem;
-    color: var(--secondary-text-color); /* Lighter gray for readability */
-    font-family: var(--font-body); /* Changed to Montserrat */
+    font-size: 1.5rem; /* Larger, more readable */
+    margin-bottom: 2rem;
+    color: var(--secondary-text-color);
+    font-family: var(--font-body);
+    font-weight: 500; /* Bolder paragraph text */
 }
 .about-text strong {
-    color: var(--accent-color); /* Gold strong text */
-    font-family: var(--font-heading); /* Oswald for impact */
-    letter-spacing: 0.8px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    color: var(--accent-color); /* Pink strong text */
+    font-family: var(--font-heading);
+    letter-spacing: 1px; /* More spacing */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    font-weight: 700; /* Bolder strong text */
 }
 
 
@@ -580,97 +583,92 @@ section h2::after {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 3.5rem; /* More space */
     flex-wrap: wrap;
-    margin-bottom: 4.5rem;
+    margin-bottom: 5rem; /* More space before email capture */
 }
 
 .social-links a {
     color: var(--primary-text-color);
-    font-size: 4.2rem; /* Even larger icons */
+    font-size: 4.5rem; /* Even larger icons */
     transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.9)); /* Deeper shadow */
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.9)); /* Deeper shadow */
 }
 
 .social-links a:hover {
-    color: var(--accent-color); /* Gold on hover */
-    transform: translateY(-12px) scale(1.2); /* More dramatic lift and scale */
-    filter: drop-shadow(3px 3px 15px rgba(255, 215, 0, 0.9)); /* Intense gold glow */
+    color: var(--accent-color); /* Pink on hover */
+    transform: translateY(-15px) scale(1.25); /* More dramatic lift and scale */
+    filter: drop-shadow(4px 4px 20px rgba(255, 0, 255, 0.95)); /* Intense pink glow */
 }
 
 .email-capture {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
     background-color: var(--dark-elements);
-    padding: 3.5rem;
-    border: 4px solid var(--accent-color); /* Thicker, stronger GOLD border */
-    max-width: 700px;
+    padding: 4rem; /* More padding */
+    border: 5px solid var(--accent-color); /* Thicker, stronger PINK border */
+    max-width: 750px; /* Wider form */
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.9); /* Stronger shadow */
-    transform: skewX(-1deg);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+    transform: skewX(-2deg); /* Slightly more aggressive tilt */
 }
 
 .email-capture h3 {
-    font-family: var(--font-heading); /* Oswald for impact */
-    font-size: 2.8rem;
+    font-family: var(--font-heading);
+    font-size: 3.2rem; /* Larger heading */
     color: var(--primary-text-color);
-    margin-bottom: 2.2rem;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Deeper shadow */
-    text-transform: uppercase; /* All caps for heading */
+    margin-bottom: 2.5rem;
+    letter-spacing: 1.5px;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8); /* Deeper shadow */
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .email-capture p {
-    font-family: var(--font-body); /* Changed to Montserrat */
-    font-size: 1.2rem;
+    font-family: var(--font-body);
+    font-size: 1.3rem;
     color: var(--secondary-text-color);
-    margin-bottom: 2rem;
-}
-
-.email-capture form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
+    margin-bottom: 2.5rem;
 }
 
 .email-capture input[type="email"] {
-    padding: 1.3rem;
+    padding: 1.5rem; /* More padding */
     background-color: #2a2a2a;
-    border: 1px solid var(--accent-color); /* Gold border */
+    border: 2px solid var(--accent-color); /* Thicker Pink border */
     color: var(--primary-text-color);
-    font-size: 1.3rem;
-    font-family: var(--font-body); /* Changed to Montserrat */
+    font-size: 1.4rem;
+    font-family: var(--font-body);
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .email-capture input[type="email"]::placeholder {
-    color: #888; /* Slightly lighter placeholder */
+    color: #888;
 }
 .email-capture input[type="email"]:focus {
-    border-color: var(--accent-color-light); /* Brighter gold on focus */
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.8); /* Gold glow on focus */
+    border-color: var(--accent-color-light); /* Brighter pink on focus */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); /* Pink glow on focus */
 }
 
 .email-capture button {
-    background-color: var(--accent-color); /* Gold button */
-    color: var(--dark-elements); /* Dark text on gold */
-    padding: 1.3rem 2.8rem;
+    background-color: var(--accent-color); /* Pink button */
+    color: var(--dark-elements);
+    padding: 1.5rem 3rem; /* More padding */
     border: none;
-    font-family: var(--font-heading); /* Oswald for impact */
-    font-size: 1.4rem;
+    font-family: var(--font-heading);
+    font-size: 1.6rem; /* Larger button text */
     cursor: pointer;
     transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
+    letter-spacing: 2px;
+    font-weight: 800; /* EVEN BOLDER */
 }
 
 .email-capture button:hover {
-    background-color: var(--secondary-accent-color); /* Royal purple on hover */
-    transform: translateY(-7px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+    background-color: var(--secondary-accent-color); /* Cyan on hover for contrast */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -679,57 +677,57 @@ footer {
     background-color: var(--dark-elements);
     color: var(--secondary-text-color);
     text-align: center;
-    padding: 3rem 0;
-    margin-top: 5rem;
-    border-top: 4px solid var(--accent-color); /* Gold border */
-    font-size: 1.1rem;
-    font-family: var(--font-body); /* Changed to Montserrat */
-    letter-spacing: 0.8px;
+    padding: 3.5rem 0; /* More padding */
+    margin-top: 6rem; /* More margin */
+    border-top: 5px solid var(--accent-color); /* Pink border */
+    font-size: 1.2rem; /* Slightly larger */
+    font-family: var(--font-body);
+    letter-spacing: 1px; /* More spacing */
 }
 
 /* --- Desktop Adjustments (larger screens) --- */
 @media (min-width: 769px) {
     .hero-content h1 {
-        font-size: 8.5rem; /* Ultra-large heading */
-        letter-spacing: 6px;
+        font-size: 9.5rem; /* ULTRA ULTRA LARGE HEADING */
+        letter-spacing: 8px; /* More spacing */
     }
 
     .hero-content p {
-        font-size: 2.1rem;
+        font-size: 2.3rem; /* Larger */
     }
 
     .cta-button {
-        padding: 1.8rem 4rem;
-        font-size: 2.2rem;
+        padding: 2rem 4.5rem; /* Larger */
+        font-size: 2.4rem; /* Larger */
     }
 
     .countdown-item span {
-        font-size: 5rem;
+        font-size: 5.5rem; /* Larger */
     }
 
     .countdown-item div {
-        font-size: 1.3rem;
+        font-size: 1.5rem; /* Larger */
     }
 
     section h2 {
-        font-size: 6.5rem; /* Massive section headings */
-        letter-spacing: 5px;
+        font-size: 7.5rem; /* Massive section headings */
+        letter-spacing: 6px;
     }
 
     .about-content {
         flex-direction: row;
         text-align: left;
         justify-content: center;
-        gap: 6rem;
+        gap: 7rem; /* Even more space */
     }
     .about-text {
-    max-width: 750px;
+        max-width: 800px;
     }
     .about-text p {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     .email-capture {
-        padding: 4.5rem;
+        padding: 5rem; /* More padding */
     }
 }
